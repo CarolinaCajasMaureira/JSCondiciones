@@ -15,12 +15,14 @@ body {
   
 .bordeImagen {
     border: 1px solid red;
-    border-radius: 8px; /* Opcional: Añade borde redondeado */
+    border-radius: 8px; 
+    max-width: 100%; 
 }
   
 .tarjetas-container {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
     width: 80%;
     max-width: 1000px;
     background-color: white;
@@ -33,12 +35,12 @@ body {
     background-color: #f9f9f9;
     border-radius: 8px;
     padding: 20px;
-    margin: 10px;
-    flex: 1;
-    max-width: calc(33.33% - 20px);
+    margin: 10px 0; 
+    flex: 1 1 calc(30% - 20px); 
+    max-width: calc(30% - 20px);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-  
+
 .tarjeta h2 {
     font-size: 1.5rem;
     margin-bottom: 10px;
@@ -83,4 +85,24 @@ body {
     font-size: 1rem;
     margin-bottom: 10px;
     border-radius: 5px;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+    .tarjeta {
+        flex: 1 1 calc(50% - 20px); 
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .tarjeta {
+        flex: 1 1 calc(100% - 20px); 
+        max-width: calc(100% - 20px);
+    }
+
+    .selects-container {
+        flex-direction: column; 
+    }
 }
